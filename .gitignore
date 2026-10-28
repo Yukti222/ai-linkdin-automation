@@ -1,0 +1,18 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local LinkedIn credentials and recruiter data must not be committed.
+linkedin_cookies.json
+applications_tracker.db
+applications_tracker.db-*
+dashboard_data.json
+
+# Local browser/debug artifacts.
+debug.png
+debug_box.py
+last_error.png
+
+# Local deployment metadata.
+.vercel/

@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-10-28 11:11:20",
+  "is_sample": false,
+  "stats": {
+    "total": 4,
+    "queued": 0,
+    "sent": 0,
+    "followed_up": 0,
+    "replied": 0,
+    "failed": 4,
+    "sent_today": 0,
+    "daily_limit": 20,
+    "slot_limit": 5,
+    "followup_days": 10,
+    "delay_min": 90,
+    "delay_max": 240,
+    "inmail_credits": 48,
+    "followup_soon": 0
+  },
+  "leads": [
+    {
+      "name": "Adithya K",
+      "headline": "Lead - People @ Procedure | Talent Acquisition | People Operations | Employer Branding | AI-Powered People Systems | Chennai, Tamil Nadu, India | Follow",
+      "profile_url": "https://www.linkedin.com/in/adithya-k-people/opportunities/hiring-opportunities/view/",
+      "status": "failed",
+      "sent_at": "",
+      "followup_due": "",
+      "followup_sent_at": ""
+    },
+    {
+      "name": "Adithya K",
+      "headline": "Lead - People @ Procedure | Talent Acquisition | People Operations | Employer Branding | AI-Powered People Systems | Chennai, Tamil Nadu, India | Follow",
+      "profile_url": "https://www.linkedin.com/in/adithya-k-people/",
+      "status": "failed",
+      "sent_at": "",
+      "followup_due": "",
+      "followup_sent_at": ""
+    },
+    {
+      "name": "Varikuppala Meghana",
+      "headline": "Technical Recruiter | Greater Hyderabad Area | Follow",
+      "profile_url": "https://www.linkedin.com/in/varikuppala-meghana-960b64262/",
+      "status": "failed",
+      "sent_at": "",
+      "followup_due": "",
+      "followup_sent_at": ""
+    },
+    {
+      "name": "Sangeetha Kokkiligadda",
+      "headline": "Business Development Executive | Bench Sales Recruiter | OPT, CPT & F1 Hiring Expert | AI/ML Engineer | GenAI | Python | Full Stack Developer | US IT Staffing. | Andhra Pradesh, India | Message",
+      "profile_url": "https://www.linkedin.com/in/kokkiligaddasangeetha03/",
+      "status": "failed",
+      "sent_at": "",
+      "followup_due": "",
+      "followup_sent_at": ""
+    }
+  ]
+}

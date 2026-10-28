@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f5f6">
+  <title>Recruiter outreach | Yukti Yadav</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f3f5f6;
+      --surface: #fff;
+      --surface-muted: #fafaf8;
+      --ink: #1c252b;
+      --muted: #68757d;
+      --faint: #89939a;
+      --line: #e2e7e9;
+      --line-strong: #cfd8dc;
+      --blue: #315c75;
+      --blue-soft: #eef4f7;
+      --green: #2f694f;
+      --green-soft: #edf5ef;
+      --amber: #8d6328;
+      --amber-soft: #f8f2e8;
+      --red: #98554c;
+      --red-soft: #f8eeec;
+      --radius: 9px;
+      --font: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 14px/1.5 var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; }
+    .shell { max-width: 1320px; margin: 0 auto; padding: 0 36px; }
+    .topbar { background: var(--surface); border-bottom: 1px solid var(--line); }
+    .topbar-inner {
+      min-height: 68px; display: flex; align-items: center;
+      justify-content: space-between; gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 650; letter-spacing: -.02em; }
+    .brand-mark {
+      width: 34px; height: 34px; display: grid; place-items: center;
+      border: 1px solid var(--line-strong); border-radius: 6px;
+      color: var(--blue); font-size: 13px; font-weight: 700;
+    }
+    .topbar-meta { color: var(--muted); font-size: 12px; }
+    main { padding: 39px 0 64px; }
+    .page-heading {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 24px; margin-bottom: 23px;
+    }
+    .eyebrow {
+      margin: 0 0 7px; color: var(--muted); font-size: 11px;
+      font-weight: 650; letter-spacing: .09em; text-transform: uppercase;
+    }
+    h1 { margin: 0; font-size: 31px; line-height: 1.2; letter-spacing: -.04em; font-weight: 650; }
+    .intro { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+    .actions { display: flex; align-items: center; gap: 10px; }
+    .button {
+      min-height: 36px; padding: 7px 12px; border: 1px solid var(--line-strong);
+      border-radius: 7px; background: var(--surface); color: var(--ink);
+      font-size: 12px; font-weight: 600;
+    }
+    .button:hover { background: var(--surface-muted); border-color: #b8c5cb; }
+    .button-primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .button-primary:hover { background: #254a62; }
+    .button:disabled { opacity: .55; cursor: wait; }
+    .brief {
+      display: flex; align-items: flex-start; gap: 13px; padding: 16px 18px;
+      margin-bottom: 18px; background: var(--surface); border: 1px solid var(--line);
+      border-left: 3px solid var(--blue); border-radius: var(--radius);
+      box-shadow: 0 1px 2px #1c252b08;
+    }
+    .brief-label {
+      flex: 0 0 auto; padding-top: 1px; color: var(--blue);
+      font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .brief-copy { color: #46535b; }
+    .metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
+    .metric {
+      min-height: 119px; padding: 17px 19px; background: var(--surface);
+      border: 1px solid var(--line); border-top: 2px solid #d9e3e7;
+      border-radius: var(--radius); box-shadow: 0 1px 2px #1c252b08;
+    }
+    .metric-label { color: var(--muted); font-size: 11px; font-weight: 620; letter-spacing: .025em; }
+    .metric-value { margin-top: 13px; font-size: 33px; line-height: 1; letter-spacing: -.045em; font-weight: 650; }
+    .metric-note { margin-top: 8px; color: var(--faint); font-size: 11px; }
+    .content-grid {
+      display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(280px, .8fr);
+      gap: 15px; margin-top: 17px; align-items: start;
+    }
+    .panel {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); box-shadow: 0 1px 2px #1c252b08;
+    }
+    .panel-header {
+      padding: 17px 19px; border-bottom: 1px solid var(--line);
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 15px;
+    }
+    h2 { margin: 0; font-size: 15px; letter-spacing: -.02em; font-weight: 650; }
+    .panel-caption { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+    .meeting-list { padding: 0 19px; }
+    .meeting {
+      display: grid; grid-template-columns: 75px minmax(0, 1fr); gap: 12px;
+      padding: 15px 0; border-bottom: 1px solid var(--line);
+    }
+    .meeting:last-child { border-bottom: 0; }
+    .meeting-date { color: var(--blue); font-size: 11px; font-weight: 650; line-height: 1.5; }
+    .meeting-name { font-size: 13px; font-weight: 620; }
+    .meeting-topic { margin-top: 3px; color: var(--muted); font-size: 12px; }
+    .empty-state { padding: 24px 19px; color: var(--muted); font-size: 12px; }
+    .leads-panel { margin-top: 18px; }
+    .table-tools { display: flex; align-items: center; gap: 9px; }
+    .search {
+      width: min(250px, 35vw); height: 34px; padding: 6px 10px;
+      border: 1px solid var(--line-strong); border-radius: 5px;
+      color: var(--ink); background: #fff; outline: none;
+    }
+    .search:focus, select:focus, input:focus, textarea:focus {
+      border-color: #7894a4; outline: 2px solid #dfeaf0; outline-offset: 0;
+    }
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th {
+      padding: 10px 15px; color: var(--faint); background: var(--surface-muted);
+      font-size: 10px; font-weight: 650; letter-spacing: .07em; text-transform: uppercase;
+      white-space: nowrap;
+    }
+    td { padding: 13px 15px; border-top: 1px solid var(--line); vertical-align: middle; }
+    tbody tr:hover { background: #fbfcfc; }
+    .lead-name { font-size: 12px; font-weight: 620; text-decoration: none; }
+    .lead-name:hover { color: var(--blue); text-decoration: underline; }
+    .lead-headline { max-width: 275px; margin-top: 3px; color: var(--muted); font-size: 11px; }
+    .cell-secondary { margin-top: 3px; color: var(--muted); font-size: 11px; }
+    .status, .sentiment {
+      display: inline-block; padding: 3px 7px; border-radius: 4px;
+      background: var(--surface-muted); color: var(--muted);
+      font-size: 10px; font-weight: 620; white-space: nowrap;
+    }
+    .status-sent, .sentiment-neutral, .sentiment-unclassified { background: var(--blue-soft); color: var(--blue); }
+    .status-replied, .sentiment-positive { background: var(--green-soft); color: var(--green); }
+    .status-failed, .sentiment-negative { background: var(--red-soft); color: var(--red); }
+    .status-queued, .sentiment-awaiting { background: var(--amber-soft); color: var(--amber); }
+    .row-action { padding: 5px 8px; font-size: 11px; }
+    .workflow-label {
+      padding: 6px 10px; border: 1px solid var(--line-strong); border-radius: 6px;
+      background: var(--surface); color: var(--blue); font-size: 11px; font-weight: 650;
+      white-space: nowrap;
+    }
+    .visually-hidden {
+      position: absolute; left: 0; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+    .footer {
+      display: flex; justify-content: space-between; gap: 15px; margin-top: 13px;
+      color: var(--faint); font-size: 11px;
+    }
+    .notice { margin: 15px 0; color: var(--muted); font-size: 12px; }
+    .notice.error { color: var(--red); }
+    dialog {
+      width: min(520px, calc(100vw - 28px)); padding: 0;
+      border: 1px solid var(--line-strong); border-radius: 9px;
+      color: var(--ink); background: var(--surface); box-shadow: 0 18px 60px #17202730;
+    }
+    dialog::backdrop { background: #17202766; }
+    .dialog-head { padding: 19px 21px 14px; border-bottom: 1px solid var(--line); }
+    .dialog-body { padding: 18px 21px; }
+    .field { display: grid; gap: 6px; margin-bottom: 15px; }
+    .field label { color: #46535b; font-size: 11px; font-weight: 650; }
+    .field input, .field select, .field textarea {
+      width: 100%; min-height: 36px; padding: 8px 10px; border: 1px solid var(--line-strong);
+      border-radius: 5px; background: #fff; color: var(--ink);
+    }
+    .field textarea { min-height: 85px; resize: vertical; }
+    .draft-field textarea { min-height: 210px; }
+    .form-note { margin: -4px 0 13px; color: var(--muted); font-size: 11px; }
+    .form-note.error { color: var(--red); }
+    .dialog-actions {
+      display: flex; justify-content: flex-end; gap: 9px;
+      padding: 13px 21px; border-top: 1px solid var(--line);
+    }
+    td.actions-cell { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    @media (max-width: 900px) {
+      .shell { padding: 0 22px; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .content-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .shell { padding: 0 15px; }
+      .topbar-meta { display: none; }
+      main { padding-top: 25px; }
+      .page-heading { align-items: flex-start; flex-direction: column; }
+      h1 { font-size: 27px; }
+      .metrics { gap: 9px; }
+      .metric { min-height: 101px; padding: 14px; }
+      .metric-value { font-size: 27px; }
+      .panel-header { flex-direction: column; }
+      .table-tools { width: 100%; }
+      .search { width: 100%; }
+      .footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand"><span class="brand-mark">YY</span><span>Career outreach</span></div>
+      <div class="topbar-meta">Yukti Yadav &nbsp;·&nbsp; Internship search</div>
+    </div>
+  </div>
+
+  <main class="shell">
+    <section class="page-heading" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow" id="today-label">Outreach overview</p>
+        <h1 id="page-title">Outreach overview</h1>
+        <p class="intro">Track recruiter conversations, review unsent drafts, and record replies or meeting plans.</p>
+      </div>
+      <div class="actions">
+        <span class="workflow-label">Draft-only workflow</span>
+        <button class="button" id="refresh-button" type="button">Refresh data</button>
+      </div>
+    </section>
+
+    <section class="brief" aria-live="polite">
+      <div class="brief-label">Today at a glance</div>
+      <div class="brief-copy" id="brief-copy">Loading your latest outreach activity… Messages are not sent automatically.</div>
+    </section>
+
+    <section class="metrics" aria-label="Outreach metrics">
+      <article class="metric">
+        <div class="metric-label">Messages sent</div>
+        <div class="metric-value" id="metric-sent">—</div>
+        <div class="metric-note" id="metric-sent-note">— sent today</div>
+      </article>
+      <article class="metric">
+        <div class="metric-label">Replies received</div>
+        <div class="metric-value" id="metric-replies">—</div>
+        <div class="metric-note" id="metric-reply-rate">— reply rate</div>
+      </article>
+      <article class="metric">
+        <div class="metric-label">Positive replies</div>
+        <div class="metric-value" id="metric-positive">—</div>
+        <div class="metric-note">Marked as interested</div>
+      </article>
+      <article class="metric">
+        <div class="metric-label">Meetings scheduled</div>
+        <div class="metric-value" id="metric-meetings">—</div>
+        <div class="metric-note">Upcoming conversations</div>
+      </article>
+      <article class="metric">
+        <div class="metric-label">Drafts prepared</div>
+        <div class="metric-value" id="metric-drafts">—</div>
+        <div class="metric-note">Unsent drafts ready in LinkedIn</div>
+      </article>
+      <article class="metric">
+        <div class="metric-label">Leads in queue</div>
+        <div class="metric-value" id="metric-queued">—</div>
+        <div class="metric-note">Waiting for message review</div>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Upcoming meetings</h2>
+            <p class="panel-caption">Interview and internship conversations on your calendar.</p>
+          </div>
+        </div>
+        <div id="meeting-list" class="meeting-list">
+          <div class="empty-state">Loading meetings…</div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Response summary</h2>
+            <p class="panel-caption">Replies you have reviewed and classified.</p>
+          </div>
+        </div>
+        <div class="meeting-list">
+          <div class="meeting">
+            <div class="meeting-date">REVIEW</div>
+            <div><div class="meeting-name" id="response-unclassified">—</div><div class="meeting-topic">Reply received; sentiment not reviewed</div></div>
+          </div>
+          <div class="meeting">
+            <div class="meeting-date">POSITIVE</div>
+            <div><div class="meeting-name" id="response-positive">—</div><div class="meeting-topic">Interested in discussing an opportunity</div></div>
+          </div>
+          <div class="meeting">
+            <div class="meeting-date">NEUTRAL</div>
+            <div><div class="meeting-name" id="response-neutral">—</div><div class="meeting-topic">Replied; next step not confirmed</div></div>
+          </div>
+          <div class="meeting">
+            <div class="meeting-date">NEGATIVE</div>
+            <div><div class="meeting-name" id="response-negative">—</div><div class="meeting-topic">No suitable opening at this time</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel leads-panel">
+      <div class="panel-header">
+        <div>
+          <h2>Recruiter pipeline</h2>
+          <p class="panel-caption">Review queued messages, then record replies and confirmed meeting details.</p>
+        </div>
+        <div class="table-tools">
+          <input class="search" id="lead-search" type="search" placeholder="Search recruiters" aria-label="Search recruiters">
+          <select class="search" id="lead-filter" aria-label="Filter by status">
+            <option value="all">All leads</option>
+            <option value="queued">Queued</option>
+            <option value="sent">Messaged</option>
+            <option value="replied">Replied</option>
+            <option value="failed">Needs attention</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Recruiter</th>
+              <th scope="col">Outreach</th>
+              <th scope="col">Response</th>
+              <th scope="col">Meeting</th>
+              <th scope="col"><span class="visually-hidden">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="leads-body">
+            <tr><td colspan="5" class="empty-state">Loading recruiter activity…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer" style="padding: 0 15px 13px">
+        <span id="lead-count"></span>
+        <span id="updated-at"></span>
+      </div>
+    </section>
+
+    <p class="notice" id="notice" role="status"></p>
+  </main>
+
+  <dialog id="engagement-dialog">
+    <form id="engagement-form">
+      <div class="dialog-head">
+        <h2 id="dialog-title">Update conversation</h2>
+        <p class="panel-caption">Record a reply or an interview meeting. These details stay in your local database.</p>
+      </div>
+      <div class="dialog-body">
+        <input type="hidden" id="lead-id">
+        <div class="field">
+          <label for="reply-status">Reply status</label>
+          <select id="reply-status" required>
+            <option value="awaiting">No reply recorded</option>
+            <option value="unclassified">Reply received — classify later</option>
+            <option value="positive">Positive — interested</option>
+            <option value="neutral">Neutral — follow-up needed</option>
+            <option value="negative">Not a fit</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="reply-notes">Reply notes</label>
+          <textarea id="reply-notes" maxlength="4000" placeholder="What did they say?"></textarea>
+        </div>
+        <div class="field">
+          <label for="meeting-at">Meeting date and time</label>
+          <input id="meeting-at" type="datetime-local">
+        </div>
+        <div class="field">
+          <label for="meeting-topic">Meeting topic</label>
+          <input id="meeting-topic" maxlength="500" placeholder="AI internship introduction">
+        </div>
+        <p class="form-note">To remove a meeting, clear both its date and topic.</p>
+      </div>
+      <div class="dialog-actions">
+        <button class="button" type="button" id="cancel-edit">Cancel</button>
+        <button class="button button-primary" type="submit" id="save-edit">Save update</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="draft-dialog">
+    <form id="draft-form">
+      <div class="dialog-head">
+        <h2 id="draft-title">Review message</h2>
+        <p class="panel-caption">Edit this message before preparing it in LinkedIn. It will remain unsent.</p>
+      </div>
+      <div class="dialog-body">
+        <div class="field draft-field">
+          <label for="draft-message">Message to review</label>
+          <textarea id="draft-message" maxlength="10000" required></textarea>
+        </div>
+        <p class="form-note" id="draft-resume-note">Resume will be attached in the LinkedIn composer.</p>
+        <p class="form-note" id="draft-status" role="status">Loading message preview…</p>
+      </div>
+      <div class="dialog-actions">
+        <button class="button" type="button" id="cancel-draft">Close</button>
+        <button class="button button-primary" type="submit" id="prepare-draft" disabled>Prepare unsent draft</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script>
+    const labels = {
+      queued: "Queued", sent: "Messaged", followed_up: "Followed up",
+      replied: "Replied", failed: "Needs attention",
+      preparing: "Preparing draft", prepared: "Draft prepared", none: "No draft yet",
+      awaiting: "Awaiting reply", unclassified: "Review reply",
+      positive: "Positive", neutral: "Neutral", negative: "Not a fit"
+    };
+    let dashboard = null;
+    let selectedLead = null;
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      })[char]);
+    }
+
+    function formatDate(value, options = { dateStyle: "medium" }) {
+      if (!value) return "—";
+      const date = new Date(value);
+      return Number.isNaN(date.getTime()) ? "—" : new Intl.DateTimeFormat(undefined, options).format(date);
+    }
+
+    function profileMarkup(lead) {
+      const name = escapeHtml(lead.name || "Unnamed lead");
+      if (!lead.profile_url || !/^https:\/\/www\.linkedin\.com\//i.test(lead.profile_url)) return name;
+      return `<a class="lead-name" href="${escapeHtml(lead.profile_url)}" target="_blank" rel="noopener noreferrer">${name}</a>`;
+    }
+
+    async function loadDashboard() {
+      const button = document.getElementById("refresh-button");
+      const notice = document.getElementById("notice");
+      button.disabled = true;
+      notice.textContent = "";
+      notice.classList.remove("error");
+      try {
+        const response = await fetch("/api/dashboard", { cache: "no-store" });
+        if (!response.ok) throw new Error(`Dashboard API returned HTTP ${response.status}`);
+        dashboard = await response.json();
+        renderDashboard();
+      } catch (error) {
+        notice.textContent = `Dashboard data could not be loaded: ${error.message}. Make sure dashboard_server.py is running.`;
+        notice.classList.add("error");
+      } finally {
+        button.disabled = false;
+      }
+    }
+
+    function renderDashboard() {
+      const { stats, leads, meetings, generated_at } = dashboard;
+      document.getElementById("today-label").textContent =
+        new Intl.DateTimeFormat(undefined, { weekday: "long", month: "long", day: "numeric" }).format(new Date());
+      document.getElementById("metric-sent").textContent = stats.messages_sent;
+      document.getElementById("metric-sent-note").textContent =
+        `${stats.messages_sent_today} sent today · ${stats.daily_limit} per-day limit`;
+      document.getElementById("metric-replies").textContent = stats.replies;
+      document.getElementById("metric-reply-rate").textContent = `${stats.reply_rate}% reply rate`;
+      document.getElementById("metric-positive").textContent = stats.positive_replies;
+      document.getElementById("metric-meetings").textContent = stats.meetings_scheduled;
+      document.getElementById("metric-drafts").textContent = stats.drafts_prepared;
+      document.getElementById("metric-queued").textContent = stats.queued;
+      document.getElementById("response-unclassified").textContent = stats.unclassified_replies;
+      document.getElementById("response-positive").textContent = stats.positive_replies;
+      document.getElementById("response-neutral").textContent = stats.neutral_replies;
+      document.getElementById("response-negative").textContent = stats.negative_replies;
+      document.getElementById("updated-at").textContent = `Updated ${formatDate(generated_at, { hour: "numeric", minute: "2-digit" })}`;
+
+      const positive = stats.positive_replies;
+      const meetingCount = stats.meetings_scheduled;
+      const messageWord = stats.messages_sent === 1 ? "message" : "messages";
+      const replyWord = stats.replies === 1 ? "reply" : "replies";
+      const brief = stats.messages_sent === 0
+        ? `No messages have been confirmed as sent yet. ${stats.queued} leads are ready for review; drafts stay unsent until you send them yourself.`
+        : `You have sent ${stats.messages_sent} ${messageWord} and received ${stats.replies} ${replyWord}. ${positive} are positive${meetingCount ? `, with ${meetingCount} upcoming meeting${meetingCount === 1 ? "" : "s"} scheduled` : ""}. New outreach remains draft-only.`;
+      document.getElementById("brief-copy").textContent = brief;
+
+      renderMeetings(meetings);
+      renderLeads(leads);
+    }
+
+    function renderMeetings(meetings) {
+      const root = document.getElementById("meeting-list");
+      if (!meetings.length) {
+        root.innerHTML = '<div class="empty-state">No meetings scheduled. Record a date and time from a recruiter row when one is confirmed.</div>';
+        return;
+      }
+      root.innerHTML = meetings.map(meeting => `
+        <article class="meeting">
+          <div class="meeting-date">${escapeHtml(formatDate(meeting.meeting_at, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }))}</div>
+          <div>
+            <div class="meeting-name">${profileMarkup(meeting)}</div>
+            <div class="meeting-topic">${escapeHtml(meeting.meeting_topic || "Meeting topic not added")}</div>
+          </div>
+        </article>`).join("");
+    }
+
+    function renderLeads(leads = dashboard.leads) {
+      const query = document.getElementById("lead-search").value.trim().toLowerCase();
+      const filter = document.getElementById("lead-filter").value;
+      const visible = leads.filter(lead => {
+        const matchesQuery = `${lead.name} ${lead.headline}`.toLowerCase().includes(query);
+        const matchesFilter = filter === "all" ||
+          (filter === "replied" ? ["positive", "neutral", "negative"].includes(lead.reply_status) : lead.status === filter);
+        return matchesQuery && matchesFilter;
+      });
+      const body = document.getElementById("leads-body");
+      if (!visible.length) {
+        body.innerHTML = '<tr><td colspan="5" class="empty-state">No matching recruiter conversations.</td></tr>';
+      } else {
+        body.innerHTML = visible.map(lead => {
+          const statusClass = lead.status === "failed" ? "status-failed" :
+            lead.status === "queued" ? "status-queued" : lead.status === "replied" ? "status-replied" : "status-sent";
+          return `<tr>
+            <td>${profileMarkup(lead)}<div class="lead-headline">${escapeHtml(lead.headline || "Recruiter")}</div></td>
+            <td><span class="status ${statusClass}">${escapeHtml(labels[lead.status] || lead.status)}</span>
+              ${lead.sent_at ? `<div class="cell-secondary">${escapeHtml(formatDate(lead.sent_at, { dateStyle: "medium" }))}</div>` : ""}
+            </td>
+            <td><span class="sentiment sentiment-${escapeHtml(lead.reply_status)}">${escapeHtml(labels[lead.reply_status] || "Awaiting reply")}</span>
+              ${lead.reply_notes ? `<div class="cell-secondary" title="${escapeHtml(lead.reply_notes)}">${escapeHtml(lead.reply_notes.slice(0, 80))}</div>` : ""}
+            </td>
+            <td>${lead.meeting_at
+              ? `${escapeHtml(formatDate(lead.meeting_at, { dateStyle: "medium", timeStyle: "short" }))}<div class="cell-secondary">${escapeHtml(lead.meeting_topic)}</div>`
+              : '<span class="cell-secondary">Not scheduled</span>'}
+            </td>
+            <td class="actions-cell">
+              ${lead.status === "queued"
+                ? lead.draft_state === "preparing"
+                  ? '<button class="button row-action" type="button" disabled>Preparing…</button>'
+                  : `<button class="button row-action button-primary" type="button" data-review-lead="${lead.id}">Review message</button>`
+                : ""}
+              <button class="button row-action" type="button" data-edit-lead="${lead.id}">Update</button>
+              ${lead.draft_state === "prepared" ? '<div class="cell-secondary">Unsent draft prepared</div>' : ""}
+            </td>
+          </tr>`;
+        }).join("");
+      }
+      document.getElementById("lead-count").textContent = `${visible.length} shown · ${leads.length} total`;
+      body.querySelectorAll("[data-edit-lead]").forEach(button => {
+        button.addEventListener("click", () => openEditor(Number(button.dataset.editLead)));
+      });
+      body.querySelectorAll("[data-review-lead]").forEach(button => {
+        button.addEventListener("click", () => openDraft(Number(button.dataset.reviewLead)));
+      });
+    }
+
+    async function openDraft(leadId) {
+      selectedLead = dashboard.leads.find(lead => lead.id === leadId);
+      if (!selectedLead) return;
+      const dialog = document.getElementById("draft-dialog");
+      const message = document.getElementById("draft-message");
+      const prepare = document.getElementById("prepare-draft");
+      const status = document.getElementById("draft-status");
+      document.getElementById("draft-title").textContent = `Review message for ${selectedLead.name || "lead"}`;
+      document.getElementById("draft-resume-note").textContent = "Resume will be attached in the LinkedIn composer.";
+      message.value = "";
+      prepare.disabled = true;
+      status.textContent = "Loading message preview…";
+      status.classList.remove("error");
+      dialog.showModal();
+      try {
+        const response = await fetch(`/api/leads/${leadId}/draft`, { cache: "no-store" });
+        const preview = await response.json();
+        if (!response.ok) throw new Error(preview.error || `HTTP ${response.status}`);
+        message.value = preview.message;
+        document.getElementById("draft-resume-note").textContent =
+          `Resume to attach: ${preview.resume_name}. The message will not be sent.`;
+        status.textContent = preview.draft_state === "prepared"
+          ? "A draft was prepared earlier. Review or edit it before opening LinkedIn again."
+          : "Review and edit the text below. Nothing is sent by this action.";
+        prepare.disabled = false;
+      } catch (error) {
+        status.textContent = `Could not load message: ${error.message}`;
+        status.classList.add("error");
+      }
+    }
+
+    async function waitForDraftResult(leadId) {
+      for (let attempt = 0; attempt < 30; attempt += 1) {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        try {
+          const response = await fetch(`/api/leads/${leadId}/draft`, { cache: "no-store" });
+          if (!response.ok) break;
+          const result = await response.json();
+          if (result.draft_state === "prepared" || result.draft_state === "failed") {
+            document.getElementById("draft-status").textContent = result.draft_state === "prepared"
+              ? "Draft prepared in the open LinkedIn composer. It remains unsent."
+              : "Draft preparation failed. Check the LinkedIn draft window for details, then retry.";
+            await loadDashboard();
+            return;
+          }
+        } catch (error) {
+          document.getElementById("draft-status").textContent = `Could not check draft status: ${error.message}`;
+          return;
+        }
+      }
+      document.getElementById("draft-status").textContent =
+        "LinkedIn is still preparing the draft. Check its separate window; no message is sent automatically.";
+      await loadDashboard();
+    }
+
+    function openEditor(leadId) {
+      selectedLead = dashboard.leads.find(lead => lead.id === leadId);
+      if (!selectedLead) return;
+      document.getElementById("dialog-title").textContent = `Update ${selectedLead.name || "lead"}`;
+      document.getElementById("lead-id").value = selectedLead.id;
+      document.getElementById("reply-status").value = selectedLead.reply_status || "awaiting";
+      document.getElementById("reply-notes").value = selectedLead.reply_notes || "";
+      document.getElementById("meeting-at").value = selectedLead.meeting_at ? selectedLead.meeting_at.slice(0, 16) : "";
+      document.getElementById("meeting-topic").value = selectedLead.meeting_topic || "";
+      document.getElementById("engagement-dialog").showModal();
+    }
+
+    document.getElementById("refresh-button").addEventListener("click", loadDashboard);
+    document.getElementById("lead-search").addEventListener("input", () => renderLeads());
+    document.getElementById("lead-filter").addEventListener("change", () => renderLeads());
+    document.getElementById("cancel-edit").addEventListener("click", () => {
+      document.getElementById("engagement-dialog").close();
+    });
+    document.getElementById("cancel-draft").addEventListener("click", () => {
+      document.getElementById("draft-dialog").close();
+    });
+    document.getElementById("draft-form").addEventListener("submit", async event => {
+      event.preventDefault();
+      if (!selectedLead) return;
+      const prepare = document.getElementById("prepare-draft");
+      const status = document.getElementById("draft-status");
+      prepare.disabled = true;
+      status.classList.remove("error");
+      status.textContent = "Opening LinkedIn and preparing an unsent draft…";
+      try {
+        const response = await fetch(`/api/leads/${selectedLead.id}/prepare-draft`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: document.getElementById("draft-message").value })
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || `HTTP ${response.status}`);
+        status.textContent = "LinkedIn is opening. The message will remain unsent for your review.";
+        await waitForDraftResult(selectedLead.id);
+      } catch (error) {
+        status.textContent = `Could not prepare draft: ${error.message}`;
+        status.classList.add("error");
+        prepare.disabled = false;
+      }
+    });
+    document.getElementById("engagement-form").addEventListener("submit", async event => {
+      event.preventDefault();
+      const save = document.getElementById("save-edit");
+      const notice = document.getElementById("notice");
+      const payload = {
+        reply_status: document.getElementById("reply-status").value,
+        reply_notes: document.getElementById("reply-notes").value,
+        meeting_at: document.getElementById("meeting-at").value,
+        meeting_topic: document.getElementById("meeting-topic").value
+      };
+      save.disabled = true;
+      try {
+        const response = await fetch(`/api/leads/${selectedLead.id}/engagement`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || `HTTP ${response.status}`);
+        dashboard = result.dashboard;
+        renderDashboard();
+        document.getElementById("engagement-dialog").close();
+        notice.textContent = "Conversation update saved.";
+        notice.classList.remove("error");
+      } catch (error) {
+        notice.textContent = `Could not save update: ${error.message}`;
+        notice.classList.add("error");
+      } finally {
+        save.disabled = false;
+      }
+    });
+
+    loadDashboard();
+  </script>
+</body>
+</html>
